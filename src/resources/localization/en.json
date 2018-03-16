@@ -1,0 +1,9 @@
+{
+  "appName": "Paper Rock Scissors",
+
+  "rock": "Rock",
+  "paper": "Paper",
+  "scissors": "Scissors",
+  "lizard": "Lizard",
+  "spock": "Spock"
+}

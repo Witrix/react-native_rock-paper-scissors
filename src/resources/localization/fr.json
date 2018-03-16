@@ -1,0 +1,9 @@
+{
+  "appName": "Pierre Feuille Ciseaux",
+
+  "rock": "Pierre",
+  "paper": "Papier",
+  "scissors": "Ciseaux",
+  "lizard": "Lézard",
+  "spock": "Spock"
+}
