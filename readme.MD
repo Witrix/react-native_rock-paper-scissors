@@ -1,5 +1,6 @@
 # Rock Paper Scissors - React Native
 [![Build Status](https://travis-ci.org/Witrix/react-native_rock-paper-scissors.svg?branch=master)](https://travis-ci.org/Witrix/react-native_rock-paper-scissors)
+[![Coverage Status](https://coveralls.io/repos/github/Witrix/react-native_rock-paper-scissors/badge.svg?branch=master)](https://coveralls.io/github/Witrix/react-native_rock-paper-scissors?branch=master)
   
 This project is the game "Rock paper scissors" made for a test, for a job interview.
 
