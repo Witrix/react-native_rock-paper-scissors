@@ -1,6 +1,12 @@
 import MyLocalization          from '../MyLocalzation';
+import {NativeModules} from "react-native";
 
-test('Get Locale', () => {
+test('Get Locale: with mock', () => {
+    NativeModules.I18nManager = {localeIdentifier: 'fr_FR'};
+    expect(MyLocalization.getLocale()).toMatch(/[A-z]{2}/g);
+});
+
+test('Get Locale: without mock', () => {
     expect(MyLocalization.getLocale()).toMatch(/[A-z]{2}/g);
 });
 

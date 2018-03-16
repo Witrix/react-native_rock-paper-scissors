@@ -4,28 +4,23 @@ import EN                       from '../resources/localization/en';
 
 function getLocale () {
     try {
-        if (React.Platform.OS === 'android') {
-            return NativeModules.RNI18n.getCurrentLocale(locale => locale.replace(/_/, '-'))
-        } else {
-            return NativeModules.RNI18n.locale.replace(/_/, '-')
+        if (NativeModules.I18nManager && NativeModules.I18nManager.localeIdentifier) {
+            let localeIdentifier = NativeModules.I18nManager.localeIdentifier;
+           let locales = localeIdentifier.split('_');
+           if (locales && locales.length > 0)
+               return locales[0];
         }
-    } catch (error) {
-        return 'en';
-    }
+    } catch (error) {}
+    return 'en';
 }
 
 function getString(key, locale) {
-    try {
-        if (!locale) locale = getLocale();
-        let file = EN;
-        if (locale && locale.toLowerCase() === 'fr') file = FR;
-        if (file.hasOwnProperty(key))
-            return file[key];
-        else return "";
-    } catch (error) {
-        return "";
-    }
-
+    if (!locale) locale = getLocale();
+    let file = EN;
+    if (locale && locale.toLowerCase() === 'fr') file = FR;
+    if (file && file.hasOwnProperty(key))
+        return file[key];
+    else return "";
 }
 
 const MyLocalization = {
