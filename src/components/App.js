@@ -11,18 +11,23 @@ import {
     View,
     Image,
 } from 'react-native';
-import MainStyle from './themes/styles';
+import MainStyle          from '../themes/styles';
+import MyLocalization     from "../my-lib/MyLocalzation";
+import Spacer             from "./general/Spacer";
 
 type Props = {};
 export default class App extends Component<Props> {
     render() {
+        let locale = MyLocalization.getLocale();
         return (
             <View style={MainStyle.centerView}>
                 <Text style={MainStyle.h1}>
-                    Rock Paper Scissors
+                    {MyLocalization.getString("appName")}
                 </Text>
-                <Text style={MainStyle.text}>Application in construction</Text>
-                <Image source={require('./resources/images/elements/rock.png')}/>
+                <Text style={MainStyle.text}>App in construction</Text>
+                <Spacer size={20}/>
+                <Text style={MainStyle.text}>Locale: {locale}</Text>
+                <Spacer size={20}/>
             </View>
         );
     }
