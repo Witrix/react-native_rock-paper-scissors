@@ -28,6 +28,7 @@ export default class App extends Component<Props> {
                 <Spacer size={20}/>
                 <Text style={MainStyle.text}>Locale: {locale}</Text>
                 <Spacer size={20}/>
+                <Image source={require('../resources/images/elements/spock.png')}/>
             </View>
         );
     }
