@@ -1,4 +1,6 @@
-# Rock Paper Scissors - React Native  
+# Rock Paper Scissors - React Native
+[![Build Status](https://travis-ci.org/Witrix/react-native_rock-paper-scissors.svg?branch=master)](https://travis-ci.org/Witrix/react-native_rock-paper-scissors)
+  
 This project is the game "Rock paper scissors" made for a test, for a job interview.
 
 :warning: This project was tested only with Android, I currently do not have access to a Mac to test it on iOS.
