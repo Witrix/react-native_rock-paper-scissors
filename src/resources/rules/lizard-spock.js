@@ -1,4 +1,4 @@
-[
+module.exports = [
   {
     "reference": "rock",
     "localizedKey": "rock",
@@ -64,4 +64,4 @@
       "rock"
     ]
   }
-]
+];
