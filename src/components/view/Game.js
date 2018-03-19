@@ -21,7 +21,8 @@ export default class Game extends Component {
         this.props = props;
         this.state = {
             difficulty: props.options && props.options.difficulty ?  props.options.difficulty : 'random',
-            mode: props.options && props.options.mode ?  props.options.mode : 'classic'
+            mode: props.options && props.options.mode ?  props.options.mode : 'classic',
+            player: props.options && props.options.player ?  props.options.player : 'player',
         };
         BackHandler.addEventListener('hardwareBackPress', this.onClickNavigation.bind(this, 'game-options'));
     }
@@ -42,6 +43,7 @@ export default class Game extends Component {
                 <Text style={AppStyle.h1}>{MyLocalization.getString('appName')}</Text>
                 <Text>{MyLocalization.getString('difficulty')}: {this.state.difficulty}</Text>
                 <Text>{MyLocalization.getString('gameMode')}: {this.state.mode}</Text>
+                <Text>{MyLocalization.getString('playerMode')}: {this.state.player}</Text>
                 <Element type="rock"/>
                 <Element type="paper"/>
                 <Element type="scissors"/>

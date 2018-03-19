@@ -10,6 +10,10 @@
   "play": "Jouer",
   "about": "A propos",
 
+  "playerMode": "Type de joueur",
+  "playerVsAi": "Joueur VS IA",
+  "aiVsAi": "IA VS IA",
+
   "gameMode": "Mode de jeu",
   "modeClassic": "Classique",
   "modeLizardSpock": "Lézard Spock",
