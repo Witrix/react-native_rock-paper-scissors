@@ -20,7 +20,6 @@ export default class GameOptions extends Component {
         super(props);
         this.props = props;
         this.state = {};
-        BackHandler.addEventListener('hardwareBackPress', this.onClickNavigation.bind(this, 'home'));
     }
 
     onClickNavigation(viewName, data) {

@@ -20,7 +20,6 @@ export default class Game extends Component {
             mode: props.options && props.options.mode ?  props.options.mode : 'classic',
             player: props.options && props.options.player ?  props.options.player : 'player',
         };
-        BackHandler.addEventListener('hardwareBackPress', this.onClickNavigation.bind(this, 'game-options'));
     }
 
     onClickNavigation(viewName) {
