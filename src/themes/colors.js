@@ -2,7 +2,7 @@
 const colors = {
     brand: {
         primary: "#29B6F6",
-        secondary: "#03A9F4"
+        secondary: "#FFB74D"
     },
     background: "#E1F5FE",
     statusBar: "#81D4FA",

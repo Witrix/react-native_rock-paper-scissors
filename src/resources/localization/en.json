@@ -8,5 +8,9 @@
   "spock": "Spock",
 
   "play": "Play",
-  "about": "About"
+  "about": "About",
+
+  "gameMode": "Game mode",
+  "modeClassic": "Classic",
+  "modeLizardSpock": "Lizard Spock"
 }

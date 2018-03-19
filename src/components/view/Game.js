@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
+import GameMode from "../menu/GameMode";
 
 export default class Game extends Component {
     constructor(props) {
@@ -13,19 +14,14 @@ export default class Game extends Component {
         this.props = props;
     }
 
-    onClick() {
-        if (this.props.navigation && this.props.navigation.goTo) {
-            this.props.navigation.goTo('home');
-        }
+    onSelectMode(mode) {
+        console.warn(mode);
     }
 
     render() {
         return (
             <View>
-                <Text>Game</Text>
-                <Button  title="Go Home"
-                         color={AppColor.brand.primary}
-                         onPress={this.onClick.bind(this)}/>
+               <GameMode onSelect={this.onSelectMode.bind(this)}/>
             </View>
         );
     }

@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
     h2: {
         color: Colors.text.primary,
         fontSize: 20,
+        textAlign: 'center',
     },
     text: {
         color: Colors.text.primary,
