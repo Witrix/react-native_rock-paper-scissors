@@ -1,5 +1,6 @@
 import ClassicRules     from '../resources/rules/classic';
 import LizardSpockRules from '../resources/rules/lizard-spock';
+import { AsyncStorage } from 'react-native';
 
 function getRules(mode) {
     if (mode === 'lizard-spock') return LizardSpockRules;
@@ -32,36 +33,78 @@ function defineVictory(mode, elementA, elementB) {
 }
 
 function modeRandom(mode) {
-    let rules = getRules(mode);
-    if (rules && rules.length) {
-        let number =  Math.floor(Math.random() * Math.floor(rules.length));
-        if (rules[number]) return rules[number].reference;
-        else return null;
-    }
-    return null;
+    return new Promise((resolve, reject) => {
+        let rules = getRules(mode);
+        if (rules && rules.length) {
+            let number = Math.floor(Math.random() * Math.floor(rules.length));
+            if (rules[number]) {
+                return resolve(rules[number].reference);
+            }
+            else return null;
+        }
+        reject(new Error('Element not found'));
+    });
 }
 
 function modeImpossible(mode, element) {
-    let rules = getRules(mode);
-    for (let i = 0; rules && i < rules.length; i++) {
-        for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
-            if (rules[i].beat[j] === element) return rules[i].reference;
+    return new Promise((resolve, reject) => {
+        let rules = getRules(mode);
+        for (let i = 0; rules && i < rules.length; i++) {
+            for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
+                if (rules[i].beat[j] === element) {
+                    return resolve(rules[i].reference);
+                }
+            }
         }
-    }
-    return null;
+        reject(new Error('Element not found'));
+    });
+}
+
+function modeAlgorithm(mode) {
+    return new Promise((resolve, reject) => {
+        let rules = getRules(mode);
+        AsyncStorage.getItem(mode).then(result => {
+            result = JSON.parse(result);
+            let lessPlayed = null;
+            let lessNumber = 0;
+            for (let i = 0; rules && i < rules.length; i++) {
+                let statNumber = result[rules[i].reference] || 0;
+                if (!lessPlayed || statNumber < lessNumber) {
+                    lessPlayed = rules[i].reference;
+                    lessNumber = result[lessPlayed] || 0;
+                }
+            }
+            for (let i = 0; rules && i < rules.length; i++) {
+                for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
+                    if (rules[i].beat[j] === lessPlayed) {
+                        return resolve(rules[i].reference);
+                    }
+                }
+            }
+            reject(new Error('Element not found'));
+        }).catch(error => {reject(error)});
+    });
 }
 
 
 function playGame(element, mode, difficulty) {
-    let enemyElement = null;
-    if (difficulty === 'impossible') enemyElement = modeImpossible(mode, element);
-    else enemyElement = modeRandom(mode);
-    let victory = defineVictory(mode, element, enemyElement);
-    return {
-        victory: victory,
-        myElement: element,
-        enemyElement: enemyElement,
-    }
+    return new Promise((resolve, reject) => {
+        let enemyElement = null;
+        if (difficulty === 'impossible') enemyElement = modeImpossible(mode, element);
+        else if (difficulty === 'algorithm') enemyElement = modeAlgorithm(mode);
+        else enemyElement = modeRandom(mode);
+        enemyElement.then(result => {
+            let victory = defineVictory(mode, element, result);
+            resolve({
+                victory: victory,
+                myElement: element,
+                enemyElement: result,
+            });
+        }).catch(error => {
+            reject(error);
+        })
+    });
+
 }
 
 const MyRules = {

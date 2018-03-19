@@ -40,8 +40,14 @@ export default class Game extends Component {
     }
 
     onSelectElement(element) {
-        let result = MyRules.playGame(element, this.state.mode, this.state.difficulty);
-        this.setState({result: result});
+        MyRules.playGame(element, this.state.mode, this.state.difficulty)
+            .then(result => {
+                this.setState({result: result});
+            }).catch(error => {
+                console.warn('here')
+                console.warn(error);
+        });
+
     }
 
     onPlayAgain() {
