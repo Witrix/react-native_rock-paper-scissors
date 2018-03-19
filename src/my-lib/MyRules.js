@@ -41,19 +41,20 @@ function modeRandom(mode) {
     return null;
 }
 
-function modeImpossible(mode) {
+function modeImpossible(mode, element) {
     let rules = getRules(mode);
-    if (rules && rules.length) {
-        let number =  Math.floor(Math.random() * Math.floor(rules.length));
-        return rules[number].reference;
+    for (let i = 0; rules && i < rules.length; i++) {
+        for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
+            if (rules[i].beat[j] === element) return rules[i].reference;
+        }
     }
     return null;
 }
 
 
-function playGame(element, mode, playerMode) {
+function playGame(element, mode, difficulty) {
     let enemyElement = null;
-    if (mode === 'impossible') enemyElement = modeImpossible(mode);
+    if (difficulty === 'impossible') enemyElement = modeImpossible(mode, element);
     else enemyElement = modeRandom(mode);
     let victory = defineVictory(mode, element, enemyElement);
     return {

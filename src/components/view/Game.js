@@ -32,7 +32,7 @@ export default class Game extends Component {
     }
 
     onSelectElement(element) {
-        let result = MyRules.playGame(element, this.state.mode, this.state.player);
+        let result = MyRules.playGame(element, this.state.mode, this.state.difficulty);
         this.setState({result: result});
     }
 
