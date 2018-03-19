@@ -24,12 +24,15 @@ export default class GameDifficulty extends Component {
 
     componentDidMount() {
         AsyncStorage.getItem('difficulty').then(result => {
-            if (MODE.indexOf(result) > -1) {this.setState({mode: result})}
+            if (MODE.indexOf(result) > -1) {
+                this.setState({mode: result});
+                if (this.props.onSelect && typeof this.props.onSelect === 'function') this.props.onSelect(result);
+            }
         }).catch(error => {console.warn(error)})
     }
 
     onClickMode(mode) {
-        AsyncStorage.setItem('difficulty', mode).catch(error => {console.warn(error)})
+        AsyncStorage.setItem('difficulty', mode).catch(error => {console.warn(error)});
         this.setState({mode: mode});
         if (this.props.onSelect && typeof this.props.onSelect === 'function') this.props.onSelect(mode);
     }

@@ -22,7 +22,10 @@ export default class GameMode extends Component {
 
     componentDidMount() {
         AsyncStorage.getItem('mode').then(result => {
-            if (MODE.indexOf(result) > -1) {this.setState({mode: result})}
+            if (MODE.indexOf(result) > -1) {
+                this.setState({mode: result});
+                if (this.props.onSelect && typeof this.props.onSelect === 'function') this.props.onSelect(result);
+            }
         }).catch(error => {console.warn(error)})
     }
 
