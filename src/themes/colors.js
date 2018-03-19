@@ -1,8 +1,8 @@
 
 const colors = {
     brand: {
-        primary: "#457B9D",
-        secondary: "#1D3557"
+        primary: "#2196f3",
+        secondary: "#00bcd4"
     },
     background: "#545454",
     text: {

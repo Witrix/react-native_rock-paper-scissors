@@ -10,6 +10,7 @@ import {
     Text,
     View,
     Image,
+    Button,
 } from 'react-native';
 import MainStyle          from '../themes/styles';
 import MyLocalization     from "../my-lib/MyLocalzation";
@@ -17,6 +18,12 @@ import Spacer             from "./general/Spacer";
 
 type Props = {};
 export default class App extends Component<Props> {
+
+
+    onPress() {
+
+    }
+
     render() {
         let locale = MyLocalization.getLocale();
         return (
@@ -29,6 +36,12 @@ export default class App extends Component<Props> {
                 <Text style={MainStyle.text}>Locale: {locale}</Text>
                 <Spacer size={20}/>
                 <Image source={require('../resources/images/elements/spock.png')}/>
+                <Button
+                    onPress={this.onPress.bind(this)}
+                    title="Learn More"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
             </View>
         );
     }
