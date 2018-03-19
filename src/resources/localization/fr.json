@@ -36,5 +36,6 @@
   "enemyPlayed": "L'ennemi a joué",
   "playAgain": "Rejouer",
   "changeOptions": "Rejouer dans un autre mode",
-  "home": "Accueil"
+  "home": "Accueil",
+  "back": "Retour"
 }

@@ -36,5 +36,6 @@
   "enemyPlayed": "Enemy played",
   "playAgain": "Play again",
   "changeOptions": "Play with another mode",
-  "home": "Home"
+  "home": "Home",
+  "back": "Back"
 }

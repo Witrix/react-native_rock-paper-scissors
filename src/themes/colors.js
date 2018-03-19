@@ -4,6 +4,7 @@ const colors = {
         primary: "#29B6F6",
         secondary: "#FFB74D"
     },
+    positive: "#AED581",
     background: "#E1F5FE",
     statusBar: "#81D4FA",
     text: {

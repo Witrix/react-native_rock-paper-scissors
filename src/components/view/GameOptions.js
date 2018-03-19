@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text,
     Button,
     StyleSheet,
-    BackHandler,
     ScrollView,
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
@@ -13,7 +11,8 @@ import GameMode             from "../menu/GameMode";
 import GameDifficulty       from "../menu/GameDifficulty";
 import Spacer               from "../general/Spacer";
 import MyLocalization       from "../../my-lib/MyLocalzation";
-import GamePlayerMode from "../menu/GamePlayerMode";
+import GamePlayerMode       from "../menu/GamePlayerMode";
+import Divider              from "../general/Divider";
 
 export default class GameOptions extends Component {
     constructor(props) {
@@ -25,6 +24,14 @@ export default class GameOptions extends Component {
     onClickNavigation(viewName, data) {
         if (this.props.navigation && this.props.navigation.goTo) {
             this.props.navigation.goTo(viewName, data);
+            return true;
+        }
+        return false;
+    }
+
+    onClickBack() {
+        if (this.props.navigation && this.props.navigation.goBack) {
+            this.props.navigation.goBack();
             return true;
         }
         return false;
@@ -47,18 +54,22 @@ export default class GameOptions extends Component {
             <ScrollView>
                 <View>
                     <Spacer size={20}/>
-                    <Text style={AppStyle.h1}>{MyLocalization.getString('appName')}</Text>
-                    <Spacer size={20}/>
                     <GamePlayerMode onSelect={this.onSelectPlayerMode.bind(this)}/>
                     <Spacer size={20}/>
                     <GameMode onSelect={this.onSelectMode.bind(this)}/>
                     <Spacer size={20}/>
                     <GameDifficulty onSelect={this.onSelectDifficulty.bind(this)}/>
-                    <Spacer size={20}/>
+                    <Spacer size={10}/>
+                    <Divider/>
                     <View style={style.button}>
                         <Button title={MyLocalization.getString('launchGame')}
-                                color={AppColor.brand.secondary}
+                                color={AppColor.positive}
                                 onPress={this.onClickNavigation.bind(this, 'game', {mode: this.state.mode, difficulty: this.state.difficulty, player: this.state.player})}/>
+                    </View>
+                    <View style={style.button}>
+                        <Button title={MyLocalization.getString('back')}
+                                color={'grey'}
+                                onPress={this.onClickBack.bind(this)}/>
                     </View>
                 </View>
             </ScrollView>

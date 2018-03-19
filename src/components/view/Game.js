@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     View,
-    BackHandler,
+    Button, StyleSheet,
 } from 'react-native';
 import Spacer               from "../general/Spacer";
 import SelectElement        from "../game/SelectElement";
@@ -9,6 +9,7 @@ import MyRules              from "../../my-lib/MyRules";
 import GameResult           from "../game/GameResult";
 import MenuEndGame          from "../menu/MenuEndGame";
 import AiSelectElement      from "../game/AiSelectElement";
+import MyLocalization       from "../../my-lib/MyLocalzation";
 
 export default class Game extends Component {
 
@@ -25,6 +26,14 @@ export default class Game extends Component {
     onClickNavigation(viewName) {
         if (this.props.navigation && this.props.navigation.goTo) {
             this.props.navigation.goTo(viewName);
+            return true;
+        }
+        return false;
+    }
+
+    onClickBack() {
+        if (this.props.navigation && this.props.navigation.goBack) {
+            this.props.navigation.goBack();
             return true;
         }
         return false;
@@ -68,12 +77,31 @@ export default class Game extends Component {
         }
     }
 
+    renderBack() {
+        if (!this.state.result) {
+            return (
+                <View style={style.button}>
+                    <Button title={MyLocalization.getString('back')}
+                            color={'grey'}
+                            onPress={this.onClickBack.bind(this)}/>
+                </View>
+            );
+        }
+    }
+
     render() {
         return (
             <View>
                 <Spacer size={20}/>
                 {this.renderContent()}
+                {this.renderBack()}
             </View>
         );
     }
 }
+
+const style = StyleSheet.create({
+    button: {
+        margin: 10
+    }
+});

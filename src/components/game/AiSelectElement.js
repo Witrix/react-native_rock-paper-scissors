@@ -43,7 +43,7 @@ export default class AiSelectElement extends Component {
     renderItem(item) {
         let element = item.item;
         return (
-            <View style={[style.elementContainer, this.state.selected === element.reference ? {backgroundColor: AppColor.brand.secondary} : null]}>
+            <View style={[style.elementContainer, this.state.selected === element.reference ? {backgroundColor: AppColor.positive} : null]}>
                 <Element type={element.reference}/>
             </View>
         );
