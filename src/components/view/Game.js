@@ -14,6 +14,8 @@ import Spacer               from "../general/Spacer";
 import MyLocalization       from "../../my-lib/MyLocalzation";
 import Element from "../game/Element";
 import SelectElement from "../game/SelectElement";
+import MyRules from "../../my-lib/MyRules";
+import GameResult from "../game/GameResult";
 
 export default class Game extends Component {
 
@@ -37,14 +39,26 @@ export default class Game extends Component {
     }
 
     onSelectElement(element) {
-        console.warn(element)
+        let result = MyRules.playGame(element, this.state.mode, this.state.player);
+        console.warn(result);
+        this.setState({result: result});
+    }
+
+    renderContent() {
+        if (this.state.result) {
+            return (<GameResult victory={this.state.result.victory}
+                                myElement={this.state.result.myElement}
+                                enemyElement={this.state.result.enemyElement}/>)
+        } else {
+            return (<SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>)
+        }
     }
 
     render() {
         return (
             <View>
                 <Spacer size={20}/>
-                <SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>
+                {this.renderContent()}
             </View>
         );
     }

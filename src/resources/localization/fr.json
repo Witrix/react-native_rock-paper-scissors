@@ -23,5 +23,15 @@
   "algorithm": "Algorithme",
   "impossible": "Impossible",
 
-  "launchGame": "Lancer le jeu"
+  "launchGame": "Lancer le jeu",
+
+  "equality": "Egalité",
+  "victory": "Victoire",
+  "defeat": "Défaite",
+  "youPlayed": "Vous avez joué",
+  "youAiPlayed": "Votre IA a joué",
+  "enemyPlayed": "L'ennemi a joué",
+  "playAgain": "Rejouer",
+  "changeOptions": "Rejouer dans un autre mode",
+  "home": "Acceuil"
 }

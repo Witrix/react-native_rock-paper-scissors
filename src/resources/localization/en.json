@@ -23,5 +23,15 @@
   "algorithm": "Algorithm",
   "impossible": "Impossible",
 
-  "launchGame": "Launch Game"
+  "launchGame": "Launch Game",
+
+  "equality": "Equality",
+  "victory": "Victory",
+  "defeat": "Defeat",
+  "youPlayed": "You played",
+  "youAiPlayed": "Your AI played",
+  "enemyPlayed": "Enemy played",
+  "playAgain": "Play again",
+  "changeOptions": "Play with another mode",
+  "home": "Home"
 }
