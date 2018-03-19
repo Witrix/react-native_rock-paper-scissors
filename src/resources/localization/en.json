@@ -8,7 +8,9 @@
   "spock": "Spock",
 
   "play": "Play",
-  "about": "About",
+  "statistics": "Statistics",
+
+  "noDataForStat": "No data available",
 
   "playerMode": "Player mode",
   "playerVsAi": "Player VS Ai",
@@ -18,6 +20,7 @@
   "modeClassic": "Classic",
   "modeLizardSpock": "Lizard Spock",
 
+  "allDifficulties": "All Difficulties",
   "difficulty": "Difficulty",
   "random": "Random",
   "algorithm": "Algorithm",

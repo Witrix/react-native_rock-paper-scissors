@@ -8,7 +8,9 @@
   "spock": "Spock",
 
   "play": "Jouer",
-  "about": "A propos",
+  "statistics": "Statistiques",
+
+  "noDataForStat": "Pas de données disponibles",
 
   "playerMode": "Type de joueur",
   "playerVsAi": "Joueur VS IA",
@@ -18,6 +20,7 @@
   "modeClassic": "Classique",
   "modeLizardSpock": "Lézard Spock",
 
+  "allDifficulties": "Toutes difficultés",
   "difficulty": "Difficulté",
   "random": "Aléatoire",
   "algorithm": "Algorithme",

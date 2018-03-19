@@ -45,10 +45,12 @@ export default class Home extends Component {
                              onPress={this.onClickNavigation.bind(this, 'game-options')}/>
                 </View>
                 <View style={style.button}>
-                    <Button  title={MyLocalization.getString('about')}
+                    <Button  title={MyLocalization.getString('statistics')}
                              color={AppColor.brand.primary}
-                             onPress={this.onClickNavigation.bind(this, 'about')}/>
+                             onPress={this.onClickNavigation.bind(this, 'statistics')}/>
                 </View>
+                <Spacer size={20}/>
+                <Text style={style.textMade}>Made by: William Goillot</Text>
             </View>
         );
     }
@@ -67,5 +69,8 @@ const style = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    textMade: {
+        textAlign: 'center'
     }
 });

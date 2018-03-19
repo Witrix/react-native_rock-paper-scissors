@@ -5,7 +5,7 @@ import AppColor             from '../../themes/colors';
 import Home                 from "../view/Home";
 import GameOptions          from '../view/GameOptions';
 import Game                 from "../view/Game";
-import About                from "../view/About";
+import Statistics           from "../view/Statistics";
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -26,7 +26,7 @@ export default class Navigation extends Component {
     }
 
     goTo(viewName, data) {
-        if (['home', 'game', 'game-options', 'about'].indexOf(viewName) > -1) {
+        if (['home', 'game', 'game-options', 'statistics'].indexOf(viewName) > -1) {
             this.addViewToStack(viewName);
             this.setState({view: viewName, data: data});
         }
@@ -43,8 +43,8 @@ export default class Navigation extends Component {
             return <GameOptions navigation={this}/>
         } else if (this.state.view === 'game') {
             return <Game navigation={this} options={this.state.data}/>
-        } else if (this.state.view === 'about') {
-            return <About navigation={this}/>
+        } else if (this.state.view === 'statistics') {
+            return <Statistics navigation={this}/>
         }
         return (<Home navigation={this}/>)
     }
