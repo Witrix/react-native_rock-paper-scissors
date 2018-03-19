@@ -3,7 +3,7 @@ import { View, StatusBar }  from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
 import Home                 from "../view/Home";
-import Game                 from '../view/Game';
+import GameOptions          from '../view/GameOptions';
 
 export default class Navigation extends Component {
     constructor(props) {
@@ -12,14 +12,14 @@ export default class Navigation extends Component {
     }
 
     goTo(viewName) {
-        if (['home', 'game'].indexOf(viewName) > -1) {
+        if (['home', 'game', 'game-options'].indexOf(viewName) > -1) {
             this.setState({view: viewName});
         }
     }
 
     renderContent() {
-        if (this.state.view === 'game') {
-            return <Game navigation={this}/>
+        if (this.state.view === 'game-options') {
+            return <GameOptions navigation={this}/>
         }
         return (<Home navigation={this}/>)
     }

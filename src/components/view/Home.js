@@ -42,7 +42,7 @@ export default class Home extends Component {
                 <View style={style.button}>
                     <Button  title={MyLocalization.getString('play')}
                              color={AppColor.brand.primary}
-                             onPress={this.onClickNavigation.bind(this, 'game')}/>
+                             onPress={this.onClickNavigation.bind(this, 'game-options')}/>
                 </View>
                 <View style={style.button}>
                     <Button  title={MyLocalization.getString('about')}

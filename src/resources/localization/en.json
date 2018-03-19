@@ -12,5 +12,12 @@
 
   "gameMode": "Game mode",
   "modeClassic": "Classic",
-  "modeLizardSpock": "Lizard Spock"
+  "modeLizardSpock": "Lizard Spock",
+
+  "difficulty": "Difficulty",
+  "random": "Random",
+  "algorithm": "Algorithm",
+  "impossible": "Impossible",
+
+  "launchGame": "Launch Game"
 }

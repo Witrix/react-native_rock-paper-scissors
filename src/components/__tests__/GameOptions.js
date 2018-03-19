@@ -1,17 +1,17 @@
 import 'react-native';
 import React        from 'react';
 import renderer     from 'react-test-renderer';
-import Game         from "../view/Game";
+import GameOptions  from "../view/GameOptions";
 
 it('Render correctly: No props', () => {
   const tree = renderer.create(
-      <Game/>
+      <GameOptions/>
   );
 });
 
 it('Render correctly: Invalid props', () => {
     const tree = renderer.create(
-        <Game navigation={"abc"}/>
+        <GameOptions navigation={"abc"}/>
     );
 });
 
