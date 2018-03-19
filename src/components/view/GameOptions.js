@@ -13,7 +13,7 @@ import GameDifficulty       from "../menu/GameDifficulty";
 import Spacer               from "../general/Spacer";
 import MyLocalization       from "../../my-lib/MyLocalzation";
 
-export default class Game extends Component {
+export default class GameOptions extends Component {
     constructor(props) {
         super(props);
         this.props = props;
@@ -21,20 +21,20 @@ export default class Game extends Component {
         BackHandler.addEventListener('hardwareBackPress', this.onClickNavigation.bind(this, 'home'));
     }
 
-    onClickNavigation(viewName) {
+    onClickNavigation(viewName, data) {
         if (this.props.navigation && this.props.navigation.goTo) {
-            this.props.navigation.goTo(viewName);
+            this.props.navigation.goTo(viewName, data);
             return true;
         }
         return false;
     }
 
     onSelectMode(mode) {
-        console.warn(mode);
+        this.setState({mode: mode});
     }
 
     onSelectDifficulty(difficulty) {
-        console.warn(difficulty);
+        this.setState({difficulty: difficulty});
     }
 
     render() {
@@ -50,7 +50,7 @@ export default class Game extends Component {
                 <View style={style.button}>
                     <Button title={MyLocalization.getString('launchGame')}
                             color={AppColor.brand.secondary}
-                            onPress={this.onClickNavigation.bind(this, 'game')}/>
+                            onPress={this.onClickNavigation.bind(this, 'game', {mode: this.state.mode, difficulty: this.state.difficulty})}/>
                 </View>
             </View>
         );
