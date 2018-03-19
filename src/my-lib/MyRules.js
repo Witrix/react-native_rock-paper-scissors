@@ -9,16 +9,16 @@ function getRules(mode) {
 function getElement(element, mode) {
     let rules = getRules(mode);
     for (let i = 0; rules && i < rules.length; i++) {
-        if (rules[i].reference === 'element') {
+        if (rules[i].reference === element) {
             return rules[i];
         }
     }
     return null;
 }
 
-const MyRyles = {
+const MyRules = {
     getRules,
     getElement,
 };
 
-export default MyRyles;
+export default MyRules;

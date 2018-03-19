@@ -13,6 +13,7 @@ import GameDifficulty       from "../menu/GameDifficulty";
 import Spacer               from "../general/Spacer";
 import MyLocalization       from "../../my-lib/MyLocalzation";
 import Element from "../game/Element";
+import SelectElement from "../game/SelectElement";
 
 export default class Game extends Component {
 
@@ -35,20 +36,15 @@ export default class Game extends Component {
         return false;
     }
 
+    onSelectElement(element) {
+        console.warn(element)
+    }
 
     render() {
         return (
             <View>
                 <Spacer size={20}/>
-                <Text style={AppStyle.h1}>{MyLocalization.getString('appName')}</Text>
-                <Text>{MyLocalization.getString('difficulty')}: {this.state.difficulty}</Text>
-                <Text>{MyLocalization.getString('gameMode')}: {this.state.mode}</Text>
-                <Text>{MyLocalization.getString('playerMode')}: {this.state.player}</Text>
-                <Element type="rock"/>
-                <Element type="paper"/>
-                <Element type="scissors"/>
-                <Element type="lizard"/>
-                <Element type="spock"/>
+                <SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>
             </View>
         );
     }

@@ -6,14 +6,15 @@ import {
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
-import MyLocalization from "../../my-lib/MyLocalzation";
+import MyLocalization       from "../../my-lib/MyLocalzation";
+import MyRules              from '../../my-lib/MyRules';
 
 export default class Element extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            type: props.type,
+            type: props.type
         };
     }
 
@@ -21,7 +22,6 @@ export default class Element extends Component {
     render() {
         let image = null;
         let name = "";
-        //TODO: use rule file;
         switch (this.state.type) {
             case'rock': {
                 image = require('../../resources/images/elements/rock.png');
