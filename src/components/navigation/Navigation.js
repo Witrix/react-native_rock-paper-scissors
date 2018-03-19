@@ -27,8 +27,14 @@ export default class Navigation extends Component {
 
     goTo(viewName, data) {
         if (['home', 'game', 'game-options', 'about'].indexOf(viewName) > -1) {
-            this.previous.push(viewName);
+            this.addViewToStack(viewName);
             this.setState({view: viewName, data: data});
+        }
+    }
+
+    addViewToStack(view) {
+        if (this.previous.indexOf(view) <= -1) {
+            this.previous.push(view);
         }
     }
 
