@@ -5,5 +5,8 @@
   "paper": "Papier",
   "scissors": "Ciseaux",
   "lizard": "Lézard",
-  "spock": "Spock"
+  "spock": "Spock",
+
+  "play": "Jouer",
+  "about": "A propos"
 }

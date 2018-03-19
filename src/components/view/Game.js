@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { View,
+import {
+    View,
     Text,
-    Button,
+    Button, StyleSheet,
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
+import AppColor             from '../../themes/colors';
 
 export default class Game extends Component {
     constructor(props) {
@@ -22,9 +24,15 @@ export default class Game extends Component {
             <View>
                 <Text>Game</Text>
                 <Button  title="Go Home"
-                         color="#841584"
+                         color={AppColor.brand.primary}
                          onPress={this.onClick.bind(this)}/>
             </View>
         );
     }
 }
+
+const style = StyleSheet.create({
+    button: {
+        flex: 1,
+    }
+});

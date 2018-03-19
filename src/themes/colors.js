@@ -1,12 +1,13 @@
 
 const colors = {
     brand: {
-        primary: "#2196f3",
-        secondary: "#00bcd4"
+        primary: "#29B6F6",
+        secondary: "#03A9F4"
     },
-    background: "#545454",
+    background: "#E1F5FE",
+    statusBar: "#81D4FA",
     text: {
-        primary: "#ffffff"
+        primary: "#000000"
     }
 };
 

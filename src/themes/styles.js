@@ -12,7 +12,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: Colors.background,
     },
+    centerVertical: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: Colors.background,
+    },
     h1: {
+        color: Colors.text.primary,
+        fontSize: 25,
+        textAlign: 'center',
+    },
+    h2: {
         color: Colors.text.primary,
         fontSize: 20,
     },

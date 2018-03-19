@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View }             from 'react-native';
+import { View, StatusBar }  from 'react-native';
 import AppStyle             from '../../themes/styles';
+import AppColor             from '../../themes/colors';
 import Home                 from "../view/Home";
 import Game                 from '../view/Game';
 
@@ -11,7 +12,6 @@ export default class Navigation extends Component {
     }
 
     goTo(viewName) {
-        console.warn('go to')
         if (['home', 'game'].indexOf(viewName) > -1) {
             this.setState({view: viewName});
         }
@@ -27,6 +27,9 @@ export default class Navigation extends Component {
     render() {
         return (
             <View style={AppStyle.mainView}>
+                <StatusBar
+                    backgroundColor={AppColor.statusBar}
+                    barStyle="dark-content"/>
                 {this.renderContent()}
             </View>
         );
