@@ -16,6 +16,7 @@ import Element from "../game/Element";
 import SelectElement from "../game/SelectElement";
 import MyRules from "../../my-lib/MyRules";
 import GameResult from "../game/GameResult";
+import MenuEndGame from "../menu/MenuEndGame";
 
 export default class Game extends Component {
 
@@ -44,11 +45,31 @@ export default class Game extends Component {
         this.setState({result: result});
     }
 
+    onPlayAgain() {
+        this.setState({result: null})
+    }
+
+    onChangeOptions() {
+        this.onClickNavigation('game-options');
+    }
+
+    onHome() {
+        this.onClickNavigation('home');
+    }
+
     renderContent() {
         if (this.state.result) {
-            return (<GameResult victory={this.state.result.victory}
+            return (
+                <View>
+                    <GameResult victory={this.state.result.victory}
                                 myElement={this.state.result.myElement}
-                                enemyElement={this.state.result.enemyElement}/>)
+                                enemyElement={this.state.result.enemyElement}/>
+                    <Spacer size={50}/>
+                    <MenuEndGame onPlayAgain={this.onPlayAgain.bind(this)}
+                                 onChangeOption={this.onChangeOptions.bind(this)}
+                                 onHome={this.onHome.bind(this)}/>
+                </View>
+            )
         } else {
             return (<SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>)
         }

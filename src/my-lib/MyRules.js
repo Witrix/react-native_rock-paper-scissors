@@ -18,7 +18,7 @@ function getElement(element, mode) {
 
 function defineVictory(mode, elementA, elementB) {
     let rules = getRules(mode);
-    for (let i = 0; rules && rules.length > 0; i++) {
+    for (let i = 0; rules && i < rules.length; i++) {
         if (elementA === rules[i].reference) {
             for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
                 if (rules[i].beat[j] === elementB) return 1;
