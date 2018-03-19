@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
     View,
-    FlatList,
     Text,
     StyleSheet,
-    TouchableHighlight,
+    AsyncStorage,
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
@@ -22,7 +21,42 @@ export default class GameResult extends Component {
             myElement: props.myElement,
             enemyElement: props.enemyElement,
             player: props.player,
+            mode: props.mode,
         };
+    }
+
+    componentDidMount() {
+       this.storeResult();
+       this.storeElement();
+    }
+
+    storeElement() {
+        //TODO: store in object depends on mode
+       /* let item = AsyncStorage.getItem(this.state.mode);
+        let add = item.then(result => {
+            if (!result) {
+
+            }
+            return AsyncStorage.setItem(this.state.mode, data.toString());
+        });
+        Promise.resolve(add).catch(error => {console.warn(error)});*/
+    }
+
+    storeResult() {
+        let value = "equality";
+        if (this.state.victory === -1) {
+            value = "defeat";
+        } else if (this.state.victory === 0) {
+            value = "victory";
+        }
+        let item = AsyncStorage.getItem(value);
+        let add = item.then(result => {
+            let data = parseInt(result);
+            if (!data) data = 0;
+            data = data + 1;
+            return AsyncStorage.setItem(value, data.toString());
+        });
+        Promise.resolve(add).catch(error => {console.warn(error)});
     }
 
     render() {

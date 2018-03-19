@@ -63,7 +63,8 @@ export default class Game extends Component {
                     <GameResult victory={this.state.result.victory}
                                 myElement={this.state.result.myElement}
                                 enemyElement={this.state.result.enemyElement}
-                                player={this.state.player}/>
+                                player={this.state.player}
+                                mode={this.state.mode}/>
                     <Spacer size={50}/>
                     <MenuEndGame onPlayAgain={this.onPlayAgain.bind(this)}
                                  onChangeOption={this.onChangeOptions.bind(this)}
