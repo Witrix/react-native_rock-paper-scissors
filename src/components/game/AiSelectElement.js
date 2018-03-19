@@ -58,7 +58,7 @@ export default class AiSelectElement extends Component {
                           keyExtractor={(item, index) => item.reference}
                           numColumns={3}
                           extraData={this.state.selected}
-                          columnWrapperStyle={style.elementContainer}
+                          columnWrapperStyle={style.container}
                           renderItem={this.renderItem.bind(this)}/>
             </View>
         );
@@ -70,11 +70,8 @@ const style = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    elementsContainer: {
-        flexDirection: 'row',
-        margin: 20,
-    },
     elementContainer: {
-        margin: 10
+        padding: 10,
+        borderRadius: 10,
     }
 });

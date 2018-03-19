@@ -44,7 +44,7 @@ export default class SelectElement extends Component {
                 <FlatList data={rule}
                           keyExtractor={(item, index) => item.reference}
                           numColumns={3}
-                          columnWrapperStyle={style.elementContainer}
+                          columnWrapperStyle={style.container}
                           renderItem={this.renderItem.bind(this)}/>
             </View>
         );
@@ -55,10 +55,6 @@ const style = StyleSheet.create({
     container: {
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    elementsContainer: {
-        flexDirection: 'row',
-        margin: 20
     },
     elementContainer: {
         margin: 10
