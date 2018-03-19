@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    Button, StyleSheet,
+    Button,
+    StyleSheet,
+    AsyncStorage
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
-import MyLocalization from "../../my-lib/MyLocalzation";
+import MyLocalization       from "../../my-lib/MyLocalzation";
 
-const MODE = ['classic', 'lizard-spock'];
+const MODE = ['random', 'algorithm', 'impossible'];
 
 export default class GameDifficulty extends Component {
 
@@ -20,7 +22,14 @@ export default class GameDifficulty extends Component {
         };
     }
 
+    componentDidMount() {
+        AsyncStorage.getItem('difficulty').then(result => {
+            if (MODE.indexOf(result) > -1) {this.setState({mode: result})}
+        }).catch(error => {console.warn(error)})
+    }
+
     onClickMode(mode) {
+        AsyncStorage.setItem('difficulty', mode).catch(error => {console.warn(error)})
         this.setState({mode: mode});
         if (this.props.onSelect && typeof this.props.onSelect === 'function') this.props.onSelect(mode);
     }

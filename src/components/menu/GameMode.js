@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    Button, StyleSheet,
+    Button, StyleSheet, AsyncStorage,
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
@@ -20,11 +20,17 @@ export default class GameMode extends Component {
         };
     }
 
+    componentDidMount() {
+        AsyncStorage.getItem('mode').then(result => {
+            if (MODE.indexOf(result) > -1) {this.setState({mode: result})}
+        }).catch(error => {console.warn(error)})
+    }
+
     onClickMode(mode) {
+        AsyncStorage.setItem('mode', mode).catch(error => {console.warn(error)});
         this.setState({mode: mode});
         if (this.props.onSelect && typeof this.props.onSelect === 'function') this.props.onSelect(mode);
     }
-
 
     render() {
         return (
