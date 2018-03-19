@@ -1,22 +1,14 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text,
-    Button,
-    StyleSheet,
     BackHandler,
 } from 'react-native';
-import AppStyle             from '../../themes/styles';
-import AppColor             from '../../themes/colors';
-import GameMode             from "../menu/GameMode";
-import GameDifficulty       from "../menu/GameDifficulty";
 import Spacer               from "../general/Spacer";
-import MyLocalization       from "../../my-lib/MyLocalzation";
-import Element from "../game/Element";
-import SelectElement from "../game/SelectElement";
-import MyRules from "../../my-lib/MyRules";
-import GameResult from "../game/GameResult";
-import MenuEndGame from "../menu/MenuEndGame";
+import SelectElement        from "../game/SelectElement";
+import MyRules              from "../../my-lib/MyRules";
+import GameResult           from "../game/GameResult";
+import MenuEndGame          from "../menu/MenuEndGame";
+import AiSelectElement      from "../game/AiSelectElement";
 
 export default class Game extends Component {
 
@@ -41,7 +33,6 @@ export default class Game extends Component {
 
     onSelectElement(element) {
         let result = MyRules.playGame(element, this.state.mode, this.state.player);
-        console.warn(result);
         this.setState({result: result});
     }
 
@@ -63,15 +54,18 @@ export default class Game extends Component {
                 <View>
                     <GameResult victory={this.state.result.victory}
                                 myElement={this.state.result.myElement}
-                                enemyElement={this.state.result.enemyElement}/>
+                                enemyElement={this.state.result.enemyElement}
+                                player={this.state.player}/>
                     <Spacer size={50}/>
                     <MenuEndGame onPlayAgain={this.onPlayAgain.bind(this)}
                                  onChangeOption={this.onChangeOptions.bind(this)}
                                  onHome={this.onHome.bind(this)}/>
                 </View>
             )
+        } else if (this.state.player === 'ai') {
+            return (<AiSelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>)
         } else {
-            return (<SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>)
+            return (<SelectElement mode={this.state.mode} onSelect={this.onSelectElement.bind(this)}/>);
         }
     }
 
