@@ -2,7 +2,7 @@ module.exports = [
   {
     "reference": "rock",
     "localizedKey": "rock",
-    "resourceKey": "rock.png",
+    "resourceKey": require('../images/elements/rock.png'),
     "beat": [
       "scissors"
     ],
@@ -13,7 +13,7 @@ module.exports = [
   {
     "reference": "paper",
     "localizedKey": "paper",
-    "resourceKey": "paper.png",
+    "resourceKey": require('../images/elements/paper.png'),
     "beat": [
       "rock"
     ],
@@ -24,7 +24,7 @@ module.exports = [
   {
     "reference": "scissors",
     "localizedKey": "scissors",
-    "resourceKey": "scissors.png",
+    "resourceKey": require('../images/elements/scissors.png'),
     "beat": [
       "paper"
     ],

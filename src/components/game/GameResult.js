@@ -69,12 +69,12 @@ export default class GameResult extends Component {
                     <View style={style.sidePlayer}>
                         <Text style={style.textPlayer}>{this.state.player === 'ai' ? MyLocalization.getString('youAiPlayed') : MyLocalization.getString('youPlayed')}</Text>
                         <Spacer size={20}/>
-                        <Element type={this.state.myElement}/>
+                        <Element type={this.state.myElement} mode={this.state.mode}/>
                     </View>
                     <View style={style.sidePlayer}>
                         <Text style={style.textPlayer}>{MyLocalization.getString('enemyPlayed')}</Text>
                         <Spacer size={20}/>
-                        <Element type={this.state.enemyElement}/>
+                        <Element type={this.state.enemyElement} mode={this.state.mode}/>
                     </View>
                 </View>
             </View>

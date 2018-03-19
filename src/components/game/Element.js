@@ -4,8 +4,6 @@ import {
     Image,
     Text, StyleSheet,
 } from 'react-native';
-import AppStyle             from '../../themes/styles';
-import AppColor             from '../../themes/colors';
 import MyLocalization       from "../../my-lib/MyLocalzation";
 import MyRules              from '../../my-lib/MyRules';
 
@@ -14,7 +12,8 @@ export default class Element extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            type: props.type
+            type: props.type,
+            mode: props.mode,
         };
     }
 
@@ -22,32 +21,10 @@ export default class Element extends Component {
     render() {
         let image = null;
         let name = "";
-        switch (this.state.type) {
-            case'rock': {
-                image = require('../../resources/images/elements/rock.png');
-                name = MyLocalization.getString('rock');
-                break;
-            }
-            case'paper': {
-                image = require('../../resources/images/elements/paper.png');
-                name = MyLocalization.getString('paper');
-                break;
-            }
-            case'scissors': {
-                image = require('../../resources/images/elements/scissors.png');
-                name = MyLocalization.getString('scissors');
-                break;
-            }
-            case'lizard': {
-                image = require('../../resources/images/elements/lizard.png');
-                name = MyLocalization.getString('lizard');
-                break;
-            }
-            case'spock': {
-                image = require('../../resources/images/elements/spock.png');
-                name = MyLocalization.getString('spock');
-                break;
-            }
+        let element = MyRules.getElement(this.state.type, this.state.mode);
+        if (element) {
+            image = element.resourceKey;
+            name = MyLocalization.getString(element.localizedKey);
         }
         return (
             <View style={style.container}>

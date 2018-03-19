@@ -31,7 +31,7 @@ export default class SelectElement extends Component {
             <TouchableHighlight style={style.elementContainer}
                                 underlayColor={'transparent'}
                                 onPress={this.onPressElement.bind(this, element.reference)}>
-                <Element type={element.reference}/>
+                <Element type={element.reference} mode={this.state.mode}/>
             </TouchableHighlight>
         );
     }
