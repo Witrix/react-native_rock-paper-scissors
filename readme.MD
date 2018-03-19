@@ -5,7 +5,10 @@ This project is the game "Rock paper scissors" made for a test, for a job interv
 
 :warning: This project was tested only with Android, I currently do not have access to a Mac to test it on iOS.
 
-For this project, I did not use any library except `react` and `react-native`, and libraries for unit testing.
+- Framework: `react-native` & `react`
+- Libraries: None
+- Unit Testing Libraries: `jest`, `babel-jest`, `babel-preset-react-native` & `react-test-renderer`
+
 
   
 ## Installation  & usage
