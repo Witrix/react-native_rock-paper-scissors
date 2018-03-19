@@ -25,6 +25,9 @@
 
   "launchGame": "Lancer le jeu",
 
+  "selectSign": "Séléctionner un signe",
+  "aiSelectSign": "L'IA choisi un signe",
+
   "equality": "Egalité",
   "victory": "Victoire",
   "defeat": "Défaite",

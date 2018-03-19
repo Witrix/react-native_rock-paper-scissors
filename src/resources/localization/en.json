@@ -25,6 +25,9 @@
 
   "launchGame": "Launch Game",
 
+  "selectSign": "Select a sign",
+  "aiSelectSign": "The AI selects a sign",
+
   "equality": "Equality",
   "victory": "Victory",
   "defeat": "Defeat",

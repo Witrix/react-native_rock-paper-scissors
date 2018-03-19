@@ -53,7 +53,7 @@ export default class AiSelectElement extends Component {
         let rule = MyRules.getRules(this.state.mode);
         return (
             <View style={style.container}>
-                <Text style={AppStyle.h2}>AI select a sign</Text>
+                <Text style={AppStyle.h2}>{MyLocalization.getString('aiSelectSign')}</Text>
                 <FlatList data={rule}
                           keyExtractor={(item, index) => item.reference}
                           numColumns={3}

@@ -40,7 +40,7 @@ export default class SelectElement extends Component {
         let rule = MyRules.getRules(this.state.mode);
         return (
             <View style={style.container}>
-                <Text style={AppStyle.h2}>Selectionner un signe</Text>
+                <Text style={AppStyle.h2}>{MyLocalization.getString('selectSign')}</Text>
                 <FlatList data={rule}
                           keyExtractor={(item, index) => item.reference}
                           numColumns={3}
