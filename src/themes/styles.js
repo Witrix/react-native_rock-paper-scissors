@@ -1,7 +1,7 @@
 import {StyleSheet} from "react-native";
 import Colors       from './colors';
 
-const styles = StyleSheet.create({
+const AppStyles = StyleSheet.create({
     mainView: {
         flex: 1,
         backgroundColor: Colors.background,
@@ -32,4 +32,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default styles;
+export default AppStyles;

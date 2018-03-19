@@ -15,7 +15,7 @@ export default class Divider extends Component {
 
     render() {
         return (
-            <View style={{height: this.state.size || DEFAULT_SIZE, backgroundColor: 'black', margin: 10}}/>
+            <View style={{height: this.state.size || DEFAULT_SIZE, backgroundColor: 'grey', marginHorizontal: 20, marginVertical: 10}}/>
         );
     }
 }

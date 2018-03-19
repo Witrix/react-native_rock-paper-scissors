@@ -1,5 +1,5 @@
 
-const colors = {
+const AppColors = {
     brand: {
         primary: "#29B6F6",
         secondary: "#FFB74D"
@@ -12,4 +12,4 @@ const colors = {
     }
 };
 
-export default colors;
+export default AppColors;
