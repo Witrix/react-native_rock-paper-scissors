@@ -26,37 +26,28 @@ export default class GameResult extends Component {
     }
 
     componentDidMount() {
-       this.storeResult();
-       this.storeElement();
-    }
-
-    storeElement() {
-        //TODO: store in object depends on mode
-       /* let item = AsyncStorage.getItem(this.state.mode);
-        let add = item.then(result => {
-            if (!result) {
-
-            }
-            return AsyncStorage.setItem(this.state.mode, data.toString());
-        });
-        Promise.resolve(add).catch(error => {console.warn(error)});*/
+        if (this.state.mode) {
+            this.storeResult();
+        }
     }
 
     storeResult() {
-        let value = "equality";
-        if (this.state.victory === -1) {
-            value = "defeat";
-        } else if (this.state.victory === 0) {
-            value = "victory";
-        }
-        let item = AsyncStorage.getItem(value);
-        let add = item.then(result => {
-            let data = parseInt(result);
-            if (!data) data = 0;
-            data = data + 1;
-            return AsyncStorage.setItem(value, data.toString());
+        let item = AsyncStorage.getItem(this.state.mode);
+        let update = item.then(result => {
+            let valueName = this.state.victory === 1 ? 'victory' : (this.state.victory === -1 ? 'defeat' : 'equality');
+            let valueElement = this.state.myElement;
+            let data = {};
+            if (!result) {
+                data[valueName] = 1;
+                data[valueElement] = 1;
+            } else {
+                data = JSON.parse(result);
+                data[valueName] = data[valueName] ? (data[valueName] + 1) : 1;
+                data[valueElement] = data[valueElement] ? (data[valueElement] + 1) : 1;
+            }
+            return AsyncStorage.setItem(this.state.mode, JSON.stringify(data));
         });
-        Promise.resolve(add).catch(error => {console.warn(error)});
+        Promise.resolve(update).catch(error => {console.warn(error)})
     }
 
     render() {
@@ -97,7 +88,7 @@ const style = StyleSheet.create({
         alignItems: 'center'
     },
     textPlayer: {
-      fontSize: 20,
+        fontSize: 20,
     },
     players: {
         flexDirection: 'row'
