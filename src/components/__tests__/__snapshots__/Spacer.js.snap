@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render correctly: Correct props 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+/>
+`;
+
+exports[`Render correctly: No props 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+/>
+`;
+
+exports[`Render correctly: Size invalid 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+/>
+`;
+
+exports[`Render correctly: Size invalid 2`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+/>
+`;
+
+exports[`Render correctly: Size null 1`] = `
+<View
+  style={
+    Object {
+      "marginTop": 20,
+    }
+  }
+/>
+`;

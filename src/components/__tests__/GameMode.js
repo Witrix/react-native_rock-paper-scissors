@@ -7,16 +7,19 @@ it('Render correctly: No props', () => {
   const tree = renderer.create(
     <GameMode/>
   );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: Valid props', () => {
     const tree = renderer.create(
         <GameMode mode={"classic"} onSelectMode={() => {}}/>
     );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: Invalid props', () => {
     const tree = renderer.create(
         <GameMode mode={1} onSelectMode={"abc"}/>
     );
+    expect(tree).toMatchSnapshot();
 });

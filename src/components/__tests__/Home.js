@@ -7,12 +7,14 @@ it('Render correctly: No props', () => {
   const tree = renderer.create(
     <Home/>
   );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: Invalid props', () => {
     const tree = renderer.create(
         <Home navigation={"abc"}/>
     );
+    expect(tree).toMatchSnapshot();
 });
 
 

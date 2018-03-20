@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render correctly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "margin": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#29B6F6",
+        "flex": 0.01,
+        "height": 10,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 0.99,
+        "height": 10,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Render correctly: invalid props 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "margin": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": -1,
+        "flex": 0.01,
+        "height": 10,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 0.99,
+        "height": 10,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Render correctly: valid props 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "row",
+      "margin": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "red",
+        "flex": 0.5,
+        "height": 10,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "flex": 0.5,
+        "height": 10,
+      }
+    }
+  />
+</View>
+`;

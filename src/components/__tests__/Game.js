@@ -7,11 +7,13 @@ it('Render correctly: No props', () => {
   const tree = renderer.create(
       <Game/>
   );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: Invalid props', () => {
     const tree = renderer.create(
         <Game navigation={"abc"}/>
     );
+    expect(tree).toMatchSnapshot();
 });
 

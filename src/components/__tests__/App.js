@@ -7,4 +7,5 @@ it('Renders correctly', () => {
   const tree = renderer.create(
     <App />
   );
+    expect(tree).toMatchSnapshot();
 });

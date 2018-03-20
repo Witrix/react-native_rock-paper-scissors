@@ -7,6 +7,7 @@ it('Render correctly', () => {
     const tree = renderer.create(
         <GameResult />
     );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: valid props', () => {
@@ -17,6 +18,7 @@ it('Render correctly: valid props', () => {
                     player={'player'}
                     mode={'classic'}/>
     );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: invalid props', () => {
@@ -27,4 +29,5 @@ it('Render correctly: invalid props', () => {
                     player={-1}
                     mode={-1}/>
     );
+    expect(tree).toMatchSnapshot();
 });

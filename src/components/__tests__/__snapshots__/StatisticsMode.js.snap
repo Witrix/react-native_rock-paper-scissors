@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+  >
+    No data available at the moment.
+  </Text>
+</View>
+`;
+
+exports[`Render correctly: invalid props 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Victory
+    : 
+    0
+    % (
+    0
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#AED581",
+          "flex": 0.01,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.99,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Defeat
+    : 
+    0
+    % (
+    0
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFB74D",
+          "flex": 0.01,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.99,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Equality
+    : 
+    0
+    % (
+    0
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#29B6F6",
+          "flex": 0.01,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.99,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`Render correctly: valid props 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Victory
+    : 
+    33
+    % (
+    10
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#AED581",
+          "flex": 0.3333333333333333,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.6666666666666667,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Defeat
+    : 
+    33
+    % (
+    10
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#FFB74D",
+          "flex": 0.3333333333333333,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.6666666666666667,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+  <View
+    style={
+      Object {
+        "marginTop": 5,
+      }
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Equality
+    : 
+    33
+    % (
+    10
+    )
+  </Text>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "flexDirection": "row",
+        "margin": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#29B6F6",
+          "flex": 0.3333333333333333,
+          "height": 10,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "flex": 0.6666666666666667,
+          "height": 10,
+        }
+      }
+    />
+  </View>
+</View>
+`;

@@ -7,16 +7,19 @@ it('Render correctly', () => {
   const tree = renderer.create(
     <AiSelectElement />
   );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: valid props', () => {
     const tree = renderer.create(
         <AiSelectElement mode={'classic'}/>
     );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: invalid props', () => {
     const tree = renderer.create(
         <AiSelectElement mode={-1}/>
     );
+    expect(tree).toMatchSnapshot();
 });

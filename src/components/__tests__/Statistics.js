@@ -7,10 +7,12 @@ it('Render correctly: No props', () => {
     const tree = renderer.create(
         <Statistics/>
     );
+    expect(tree).toMatchSnapshot();
 });
 
 it('Render correctly: Invalid props', () => {
     const tree = renderer.create(
         <Statistics navigation={"abc"}/>
     );
+    expect(tree).toMatchSnapshot();
 });

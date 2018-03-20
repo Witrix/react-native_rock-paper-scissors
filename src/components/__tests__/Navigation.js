@@ -7,5 +7,6 @@ it('Render correctly: No props', () => {
   const tree = renderer.create(
     <Navigation/>
   );
+    expect(tree).toMatchSnapshot();
 });
 
