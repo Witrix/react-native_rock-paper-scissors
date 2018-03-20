@@ -26,4 +26,21 @@ This file must be at the root of the `/android` folder. This path example is for
 6. Compile & launch the project with `react-native run-android`.
 
 ## Unit Testing
-For the tests, I use the library `jest`. To launch the unit testing, use the command `npm test`.
+To launch the unit testing, use the command `npm test`.
+Unit tests are on
+- Components `/src/components`
+- My Libraries `/src/my-lib`
+
+## Game options
+#### Player Type
+- **Player VS AI**: The player can play against the computer.
+- **AI VS AI**: The computer play against the computer. When the computer plays, he waits 1 second, then it plays randomly.
+#### Mode
+- **Classic**: Classic game with the elements: `paper` `rock` & `scissors`
+- **Lizard Spock**: Mode with the elements: `paper` `rock` `scissors` `spock` & `lizard`
+
+The rules can be changed with the files in `/src/resources/rules`.
+#### Difficulty
+- **Random**: The computer play randomly.
+- **Algorithm**: Use the previous game to determine which element is more likely to appear and play its counter. For example: The player plays most of the time `rock`, so the computer will play `paper`.
+- **Impossible**: The computer wait that the player plays, to play his counter. In other words, the computer cheats.
