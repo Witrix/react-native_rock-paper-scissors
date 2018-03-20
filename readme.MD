@@ -44,3 +44,20 @@ The rules can be changed with the files in `/src/resources/rules`.
 - **Random**: The computer play randomly.
 - **Algorithm**: Use the previous games to determine which element is more likely to appear and play its counter. For example: The player plays most of the time `rock`, so the computer will play `paper`.
 - **Impossible**: The computer wait that the player plays, to play his counter. In other words, the computer cheats.
+
+## Architecture
+#### Global views
+This is the different views of the application, with the interactions between them.
+
+![Image of views](https://github.com/Witrix/react-native_rock-paper-scissors/blob/master/doc/images/menu.png)
+
+#### Game process
+This is the process for an user when he plays the game.
+1. Access the view "Game Options".
+2. Select the different options (mode, player & difficulty).
+3. Redirect to the view "Game".
+4. Select the element you want to play (or if the player is "AI" it will play automaticaly).
+5. The game calls the rules with the differents options and it determines who win.
+6. End of the game. You can retry, quit or change options.
+
+![Image of views](https://github.com/Witrix/react-native_rock-paper-scissors/blob/master/doc/images/game.png)
