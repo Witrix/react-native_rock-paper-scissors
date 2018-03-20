@@ -62,6 +62,33 @@ test('Mode algorithm', () => {
     expect(MyRules.modeAlgorithm('lizard-spock')).resolves.toMatch('(rock|scissors|paper|lizard|spock)');
 });
 
+test('Play game', () => {
+    expect(MyRules.playGame('paper', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('paper', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('paper', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('paper', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('lizard', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('spock', 'classic', 'random')).resolves.toBeDefined();
+    expect(MyRules.playGame('paper', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('lizard', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('spock', 'classic', 'algorithm')).resolves.toBeDefined();
+    expect(MyRules.playGame('paper', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('scissors', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('rock', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('lizard', 'classic', 'impossible')).resolves.toBeDefined();
+    expect(MyRules.playGame('spock', 'classic', 'impossible')).resolves.toBeDefined();
+});
+
 
 
 
