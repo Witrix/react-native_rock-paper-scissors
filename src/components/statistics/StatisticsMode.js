@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import {
     View,
-    Text, StyleSheet,
+    Text,
+    StyleSheet,
 } from 'react-native';
 import StatisticsBar    from "./StatisticsBar";
 import AppColors        from "../../themes/colors";
 import Spacer           from "../general/Spacer";
-import MyLocalization from "../../my-lib/MyLocalzation";
+import MyLocalization   from "../../my-lib/MyLocalzation";
 
 export default class StatisticsMode extends Component {
 

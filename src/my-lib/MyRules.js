@@ -64,7 +64,8 @@ function modeAlgorithm(mode) {
     return new Promise((resolve, reject) => {
         let rules = getRules(mode);
         AsyncStorage.getItem(mode).then(result => {
-            result = JSON.parse(result);
+            if (result) result = JSON.parse(result);
+            else result = {};
             let lessPlayed = null;
             let lessNumber = 0;
             for (let i = 0; rules && i < rules.length; i++) {
@@ -82,7 +83,7 @@ function modeAlgorithm(mode) {
                 }
             }
             reject(new Error('Element not found'));
-        }).catch(error => {reject(error)});
+        }).catch(error => {console.warn(error);reject(error)});
     });
 }
 

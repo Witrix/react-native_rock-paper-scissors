@@ -5,12 +5,10 @@ import {
     StyleSheet,
     AsyncStorage,
 } from 'react-native';
-import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
 import MyLocalization       from "../../my-lib/MyLocalzation";
-import MyRules              from '../../my-lib/MyRules';
-import Element from "./Element";
-import Spacer from "../general/Spacer";
+import Element              from "./Element";
+import Spacer               from "../general/Spacer";
 
 export default class GameResult extends Component {
 

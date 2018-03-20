@@ -16,7 +16,6 @@ export default class GameDifficulty extends Component {
 
     constructor(props) {
         super(props);
-        this.props = props;
         this.state = {
             mode: props.mode && MODE.indexOf(props.mode) > -1 ? props.mode : 'random'
         };

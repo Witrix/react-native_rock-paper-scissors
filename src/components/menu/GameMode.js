@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import {
     View,
     Text,
-    Button, StyleSheet, AsyncStorage,
+    Button,
+    StyleSheet,
+    AsyncStorage,
 } from 'react-native';
 import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
-import MyLocalization from "../../my-lib/MyLocalzation";
+import MyLocalization       from "../../my-lib/MyLocalzation";
 
 const MODE = ['classic', 'lizard-spock'];
 
@@ -14,7 +16,6 @@ export default class GameMode extends Component {
 
     constructor(props) {
         super(props);
-        this.props = props;
         this.state = {
             mode: props.mode && MODE.indexOf(props.mode) > -1 ? props.mode : 'classic'
         };

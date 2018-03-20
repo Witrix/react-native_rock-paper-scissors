@@ -10,7 +10,7 @@
   "play": "Play",
   "statistics": "Statistics",
 
-  "noDataForStat": "No data available",
+  "noDataForStat": "No data available at the moment.",
 
   "playerMode": "Player mode",
   "playerVsAi": "Player VS Ai",

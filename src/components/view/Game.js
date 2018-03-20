@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     View,
-    Button, StyleSheet,
+    Button,
+    StyleSheet,
 } from 'react-native';
 import Spacer               from "../general/Spacer";
 import SelectElement        from "../game/SelectElement";
@@ -15,7 +16,6 @@ export default class Game extends Component {
 
     constructor(props) {
         super(props);
-        this.props = props;
         this.state = {
             difficulty: props.options && props.options.difficulty ?  props.options.difficulty : 'random',
             mode: props.options && props.options.mode ?  props.options.mode : 'classic',
@@ -42,9 +42,9 @@ export default class Game extends Component {
     onSelectElement(element) {
         MyRules.playGame(element, this.state.mode, this.state.difficulty)
             .then(result => {
-                this.setState({result: result});
+                this.setState({result: result, error: false});
             }).catch(error => {
-                console.warn('here')
+            this.setState({error: true});
                 console.warn(error);
         });
 

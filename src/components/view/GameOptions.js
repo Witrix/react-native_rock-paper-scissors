@@ -5,7 +5,6 @@ import {
     StyleSheet,
     ScrollView,
 } from 'react-native';
-import AppStyle             from '../../themes/styles';
 import AppColor             from '../../themes/colors';
 import GameMode             from "../menu/GameMode";
 import GameDifficulty       from "../menu/GameDifficulty";
@@ -15,9 +14,9 @@ import GamePlayerMode       from "../menu/GamePlayerMode";
 import Divider              from "../general/Divider";
 
 export default class GameOptions extends Component {
+
     constructor(props) {
         super(props);
-        this.props = props;
         this.state = {};
     }
 
