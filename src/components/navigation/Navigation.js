@@ -18,6 +18,8 @@ export default class Navigation extends Component {
     goBack() {
         if (this.previous && this.previous.length > 0 && this.state.view !== 'home') {
             this.previous.splice(this.previous.length - 1, 1);
+            if (this.previous[this.previous.length - 1] === this.state.view)
+                this.previous.splice(this.previous.length - 1, 1);
             this.setState({view: this.previous[this.previous.length - 1]});
             return true;
         } else {
@@ -25,8 +27,9 @@ export default class Navigation extends Component {
         }
     }
 
-    goTo(viewName, data) {
+    goTo(viewName, data, flush = false) {
         if (['home', 'game', 'game-options', 'statistics'].indexOf(viewName) > -1) {
+            if (flush) this.previous = [];
             this.addViewToStack(viewName);
             this.setState({view: viewName, data: data});
         }

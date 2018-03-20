@@ -42,5 +42,5 @@ Unit tests are on
 The rules can be changed with the files in `/src/resources/rules`.
 #### Difficulty
 - **Random**: The computer play randomly.
-- **Algorithm**: Use the previous game to determine which element is more likely to appear and play its counter. For example: The player plays most of the time `rock`, so the computer will play `paper`.
+- **Algorithm**: Use the previous games to determine which element is more likely to appear and play its counter. For example: The player plays most of the time `rock`, so the computer will play `paper`.
 - **Impossible**: The computer wait that the player plays, to play his counter. In other words, the computer cheats.

@@ -23,9 +23,9 @@ export default class Game extends Component {
         };
     }
 
-    onClickNavigation(viewName) {
+    onClickNavigation(viewName, data, flush) {
         if (this.props.navigation && this.props.navigation.goTo) {
-            this.props.navigation.goTo(viewName);
+            this.props.navigation.goTo(viewName, data, flush);
             return true;
         }
         return false;
@@ -59,7 +59,7 @@ export default class Game extends Component {
     }
 
     onHome() {
-        this.onClickNavigation('home');
+        this.onClickNavigation('home', null, true);
     }
 
     renderContent() {
