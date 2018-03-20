@@ -44,3 +44,37 @@ The rules can be changed with the files in `/src/resources/rules`.
 - **Random**: The computer play randomly.
 - **Algorithm**: Use the previous games to determine which element is more likely to appear and play its counter. For example: The player plays most of the time `rock`, so the computer will play `paper`.
 - **Impossible**: The computer wait that the player plays, to play his counter. In other words, the computer cheats.
+
+
+## Architecture
+### Menu
+```mermaid
+graph LR
+A((Home)) --- B(Game Options)
+A --- C(Statistics)
+B --- D(Game)
+```
+
+### Game
+```mermaid
+graph LR
+A(Game Options) --> B{Difficulty}
+A --> C{Player}
+A --> D{Mode}
+
+B -- Random --> E(Game)
+B -- Algorithm--> E
+B -- Impossible --> E
+
+C -- AI--> E
+C -- Player--> E
+
+D -- Classic--> E
+D -- Player--> E
+
+E --> F(Select element)
+F --> G{Victory rules}
+
+G --> H((Victory))
+G --> I((Defeat))
+```
