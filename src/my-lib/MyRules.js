@@ -66,18 +66,18 @@ function modeAlgorithm(mode) {
         AsyncStorage.getItem(mode).then(result => {
             if (result) result = JSON.parse(result);
             else result = {};
-            let lessPlayed = null;
-            let lessNumber = 0;
+            let mostPlayed = null;
+            let mostNumber = 0;
             for (let i = 0; rules && i < rules.length; i++) {
                 let statNumber = result[rules[i].reference] || 0;
-                if (!lessPlayed || statNumber < lessNumber) {
-                    lessPlayed = rules[i].reference;
-                    lessNumber = result[lessPlayed] || 0;
+                if (!mostPlayed || statNumber > mostNumber) {
+                    mostPlayed = rules[i].reference;
+                    mostNumber = result[mostPlayed] || 0;
                 }
             }
             for (let i = 0; rules && i < rules.length; i++) {
                 for (let j = 0; rules[i].beat && j < rules[i].beat.length; j++) {
-                    if (rules[i].beat[j] === lessPlayed) {
+                    if (rules[i].beat[j] === mostPlayed) {
                         return resolve(rules[i].reference);
                     }
                 }
