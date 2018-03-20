@@ -112,6 +112,9 @@ const MyRules = {
     getRules,
     getElement,
     defineVictory,
+    modeRandom,
+    modeAlgorithm,
+    modeImpossible,
     playGame,
 };
 

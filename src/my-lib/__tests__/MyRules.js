@@ -40,6 +40,28 @@ test('Define victory', () => {
     expect(MyRules.defineVictory('lizard-spock', 'lizard', 'lizard')).toBe(0);
 });
 
+test('Mode random', () => {
+    expect(MyRules.modeRandom()).resolves.toMatch('(rock|scissors|paper)');
+    expect(MyRules.modeRandom('classic')).resolves.toMatch('(rock|scissors|paper)');
+    expect(MyRules.modeRandom('lizard-spock')).resolves.toMatch('(rock|scissors|paper|lizard|spock)');
+});
+
+test('Mode impossible', () => {
+    expect(MyRules.modeImpossible('classic', 'scissors')).resolves.toEqual('rock');
+    expect(MyRules.modeImpossible('classic', 'paper')).resolves.toEqual('scissors');
+    expect(MyRules.modeImpossible('classic', 'rock')).resolves.toEqual('paper');
+    expect(MyRules.modeImpossible('lizard-spock', 'scissors')).resolves.toMatch('(rock|spock)');
+    expect(MyRules.modeImpossible('lizard-spock', 'paper')).resolves.toMatch('(scissors|lizard)');
+    expect(MyRules.modeImpossible('lizard-spock', 'rock')).resolves.toMatch('(paper|spock)');
+    expect(MyRules.modeImpossible('lizard-spock', 'spock')).resolves.toMatch('(paper|lizard)');
+    expect(MyRules.modeImpossible('lizard-spock', 'lizard')).resolves.toMatch('(scissors|rock)');
+});
+
+test('Mode algorithm', () => {
+    expect(MyRules.modeAlgorithm('classic')).resolves.toMatch('(rock|scissors|paper)');
+    expect(MyRules.modeAlgorithm('lizard-spock')).resolves.toMatch('(rock|scissors|paper|lizard|spock)');
+});
+
 
 
 
